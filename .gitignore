@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings
+target/
+.surefire-*
+.checkstyle
+*.iml
+*.ipr
+*.iws
+.idea/
+?/
+/.mvn/wrapper/maven-wrapper.jar
