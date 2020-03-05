@@ -2,6 +2,7 @@ package selenium;
 
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public abstract class Pages extends SeleniumFunctions {
 
 
     private final static TypedProperties testConfig = new TypedProperties("/test_config.properties");
+
 
     public Pages(final WebDriver driver) {
         super(driver);
@@ -31,5 +33,11 @@ public abstract class Pages extends SeleniumFunctions {
         driver.get(baseUrl);
         return this;
     }
+
+    public void clickJs(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    }
+
+
 
 }

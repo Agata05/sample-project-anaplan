@@ -7,4 +7,5 @@ public class BaseTest extends SeleniumTestWrapper {
 
     StartPage startPage;
 
+
 }

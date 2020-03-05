@@ -1,4 +1,4 @@
-Sample Selenium Project for (https://www.google.com/): Google Test. 
+Sample Selenium Project for (https://us1a.app.anaplan.com/): Anaplan Test. 
 
 ## Project design
 - The project is based on [Basic Selenium Project - legacy](https://github.com/christian-draeger/basic-selenium-project/tree/legacy) which brings:
@@ -14,7 +14,7 @@ Sample Selenium Project for (https://www.google.com/): Google Test.
 
 ## Run project with Maven
 - Prerequisites: JDK >= 8
-- Checkout project with GIT: https://github.com/Agata05/base-selenium-project.git
+- Checkout project with GIT: https://github.com/Agata05/sample-project-anaplan.git
 - From the project directory run command `mvnw clean test`
     - Test report will be generated in: _target/surefire-reports/html/index.html_
     - Output report ready for integration with CI tools (e.g. Jenkins builds)

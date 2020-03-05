@@ -1,9 +1,7 @@
 package selenium.pageobjects;
 
 import lombok.extern.slf4j.Slf4j;
-import lombok.val;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import selenium.Pages;
@@ -21,13 +19,30 @@ public class StartPage extends Pages {
         return this;
     }
 
-    @FindBy(name = "q")
-    private WebElement searchInput;
+    @FindBy(id = "username")
+    private WebElement loginInput;
 
-    public boolean isSearchInputDisplayed() {
-        val isSearchInputDisplayed = searchInput.isDisplayed();
-        log.info("Navigate to Three Buttons Page");
-        return isSearchInputDisplayed;
+    @FindBy(id = "password")
+    private WebElement passwordInput;
+
+    @FindBy(name = "submit")
+    private WebElement logInButton;
+
+    public void enterLoginEmail(String login) {
+        loginInput.sendKeys(login);
+        log.info("Logged in with email: " + login);
     }
+
+    public void enterPassword(String password) {
+        passwordInput.sendKeys(password);
+        log.info("Logged in with password: " + password);
+    }
+
+    public LaunchpadPage navigateToLaunchpadPage() {
+        logInButton.click();
+        log.info("Navigated to Launchpad Page");
+        return new LaunchpadPage(driver);
+    }
+
 
 }
